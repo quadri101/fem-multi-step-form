@@ -1,0 +1,34 @@
+.Step{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.Stepnumber{
+    width: 2rem;
+    border-radius: 100%;
+    color: hsl(229, 24%, 87%);
+    aspect-ratio: 1;
+    border: 2px hsl(229, 24%, 87%) solid;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    
+}
+.Stepnumber.Selected{
+    color: hsl(213, 96%, 18%);
+    background-color: hsl(229, 24%, 87%);
+}
+.Stepdescription{
+    font-size: .8rem;
+    color:  hsl(231, 11%, 63%);
+}
+
+.Stepname{
+    text-transform: uppercase;
+    color: hsl(0, 0%, 100%);
+}

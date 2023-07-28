@@ -1,0 +1,12 @@
+.Sidebar{
+    position: relative;
+}
+
+.Sidebar--content{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: absolute;
+    inset: 2rem 0 0 2rem;
+}
+
