@@ -1,12 +1,14 @@
 import Sidebar from './components/Sidebar/Sidebar'
-import MainContent from './components/MainContent/MainContent'
+import { Outlet } from 'react-router-dom'
 import "./App.css"
 
 function App() {
   return (
     <div className='App'>
+      {/* my sidebar */}
       <Sidebar/>
-      <MainContent/>
+      {/* Outlet Component for children of the App i.e. the steps */}
+      <Outlet/>
     </div>
   )
 }

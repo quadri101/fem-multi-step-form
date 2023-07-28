@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client'
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import App from './App.jsx'
+import YourInfo, {action as infoAction} from './components/MainContent/YourInfo/YourInfo.jsx'
+import SelectPlan from './components/MainContent/SelectPlan/SelectPlan.jsx'
 
 
 const router = createBrowserRouter(
@@ -10,6 +12,17 @@ const router = createBrowserRouter(
     {
       path: "/",
       element: <App/>,
+      children:[
+        {
+          index: true,
+          element: <YourInfo/>,
+          action: infoAction,
+        },{
+          path: "selectplan",
+          element: <SelectPlan/>,
+        }
+       
+      ]
     }
 ]
 )
