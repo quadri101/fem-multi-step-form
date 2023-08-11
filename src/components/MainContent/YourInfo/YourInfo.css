@@ -1,3 +1,4 @@
-.info-form{
-    display: grid;
+.info-form {
+	display: flex;
+	flex-direction: column;
 }

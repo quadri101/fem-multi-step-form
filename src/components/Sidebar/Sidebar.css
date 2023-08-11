@@ -1,12 +1,7 @@
-.Sidebar{
-    position: relative;
-}
+.Sidebar {
+	display: flex;
+	flex-direction: column;
+	background-image: url(./images/bg-sidebar-desktop.svg);
 
-.Sidebar--content{
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    position: absolute;
-    inset: 2rem 0 0 2rem;
+	border-radius: 0.5rem;
 }
-
