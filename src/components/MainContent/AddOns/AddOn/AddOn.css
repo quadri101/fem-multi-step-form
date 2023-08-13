@@ -1,0 +1,62 @@
+.addon {
+	display: grid;
+	grid-template:
+		"checkbox title price" auto
+		"checkbox description price" auto / max-content minmax(10vw, 17.5rem)
+		max-content;
+	gap: 0rem 2rem;
+	align-items: center;
+	border: 1px solid hsl(231, 11%, 63%);
+	padding: 1rem;
+	border-radius: 0.5rem;
+	cursor: pointer;
+}
+
+.addon.included {
+	background-color: hsla(206, 94%, 87%, 0.3);
+	border: 1px solid hsl(243, 100%, 62%);
+}
+
+.addon-title {
+	font-weight: 500;
+	color: hsl(213, 96%, 18%);
+	grid-area: title;
+	font-size: 1.1rem;
+	margin-bottom: 0.3rem;
+}
+
+.addon-price {
+	font-weight: 500;
+	grid-area: price;
+	justify-self: right;
+	color: hsl(243, 100%, 62%);
+}
+
+.addon-description {
+	grid-area: description;
+	color: hsl(231, 11%, 63%);
+	font-size: 0.9rem;
+}
+
+.checkbox {
+	width: 1.3rem;
+	aspect-ratio: 1;
+	border: 1px solid hsl(231, 11%, 63%);
+	border-radius: 0.3rem;
+	display: grid;
+	place-items: center;
+	grid-area: checkbox;
+}
+
+.checkbox svg {
+	display: none;
+}
+
+.checked {
+	border: 1px solid hsl(243, 100%, 62%);
+	background-color: hsl(243, 100%, 62%);
+}
+
+.checkbox.checked svg {
+	display: block;
+}

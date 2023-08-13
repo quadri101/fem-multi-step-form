@@ -1,4 +1,10 @@
-.info-form {
+.error-message {
+	font-weight: 500;
+	color: hsl(354, 84%, 57%);
+	font-size: 0.9rem;
+}
+
+.label-and-error {
 	display: flex;
-	flex-direction: column;
+	justify-content: space-between;
 }

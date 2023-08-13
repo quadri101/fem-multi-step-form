@@ -4,26 +4,65 @@
 	box-sizing: border-box;
 }
 
+input {
+	font-family: inherit;
+	font-weight: 500;
+	color: hsl(213, 96%, 18%);
+	font-size: 1rem;
+	padding: 0.75rem;
+	border-radius: 0.5rem;
+	border: 1px hsl(231, 11%, 63%) solid;
+	outline: none;
+	margin-bottom: 1rem;
+	width: 100%;
+}
+
+input:focus {
+	border: 1px hsl(243, 100%, 62%) solid;
+}
+
+label {
+	color: hsl(213, 96%, 18%);
+	font-size: 0.9rem;
+	font-weight: 500;
+	margin-bottom: 0.3rem;
+}
+
+button {
+	font-weight: 500;
+}
 body {
 	font-family: "Ubuntu", sans-serif;
 }
 
+input[type="checkbox"] {
+	margin-bottom: 0px;
+	aspect-ratio: 1/1;
+	width: 1.3rem;
+	background: black;
+}
+
 .App {
-	gap: 0 1rem;
-	padding: 1rem 0;
+	padding: 1rem;
 	min-height: 100vh;
+	gap: 0 1rem;
 	display: grid;
 	grid-template:
-		". sidebar . ." 1rem
-		". sidebar main-content ." auto
-		". sidebar . ." 1rem
-		/ 1rem min(35vw, 17rem) auto 1rem;
+		"sidebar  ." 1rem
+		"sidebar  main-content" auto
+		"sidebar  . " 1rem
+		/ minmax(15rem, 20vw) minmax(20rem, auto);
 }
 
 .MainContent {
 	grid-area: main-content;
-	align-self: center;
 	justify-self: center;
+	display: grid;
+	grid-template:
+		"header" max-content
+		"description" max-content
+		"content" auto
+		"buttons" max-content / 1fr;
 }
 
 .Sidebar {
@@ -32,5 +71,61 @@ body {
 	background-size: cover;
 }
 
-@media (min-width: 45rem) {
+/* General Styles */
+.page-header {
+	color: hsl(213, 96%, 18%);
+	margin-bottom: 0.5rem;
+	grid-area: header;
+}
+
+.page-content {
+	grid-area: content;
+	align-self: flex-start;
+}
+
+.page-description {
+	color: hsl(231, 11%, 63%);
+	font-size: 1rem;
+	margin-bottom: 2.5rem;
+	grid-area: description;
+}
+.navigation-buttons {
+	grid-area: buttons;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	justify-content: space-between;
+}
+
+.navigation-button:hover {
+	background-color: hsl(243, 100%, 62%);
+}
+
+.navigation-button {
+	cursor: pointer;
+	font-family: inherit;
+	margin-top: 4rem;
+	padding: 0.8rem 1.5rem;
+	font-size: 1rem;
+	border-radius: 0.5rem;
+	border: none;
+	background-color: hsl(213, 96%, 18%);
+	color: hsl(231, 100%, 99%);
+	grid-column-end: -1;
+	justify-self: end;
+}
+.back-button {
+	cursor: pointer;
+	font-family: inherit;
+	margin-top: 4rem;
+	/* padding: 0.8rem 1.5rem; */
+	font-size: 1rem;
+	border: none;
+	background-color: transparent;
+	color: hsl(231, 11%, 63%);
+	justify-self: start;
+}
+.back-button:hover {
+	color: hsl(213, 96%, 18%);
+}
+@media screen and (min-width: 40rem) {
 }

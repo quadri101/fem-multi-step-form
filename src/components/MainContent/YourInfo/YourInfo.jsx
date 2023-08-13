@@ -7,12 +7,13 @@ import "./YourInfo.css";
 import * as Yup from "yup";
 import { useRef } from "react";
 import { Button } from "@mui/material";
+import BottomButtons from "../BottomButtons/BottomButtons";
 
 function YourInfo() {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 	const userData = useSelector((state) => state.user);
-	const phoneRegExp = /\D/;
+	const phoneRegExp = /\d/;
 	const formRef = useRef();
 
 	const handleSubmit = () => {
@@ -21,9 +22,11 @@ function YourInfo() {
 		}
 	};
 	return (
-		<div className="MainContent info-form">
-			<h1>Personal info</h1>
-			<p>Please provide your name, email address, and phone number</p>
+		<div className="MainContent Your-Info">
+			<h1 className="page-header">Personal info</h1>
+			<p className="page-description">
+				Please provide your name, email address, and phone number
+			</p>
 
 			<Formik
 				innerRef={formRef}
@@ -33,33 +36,47 @@ function YourInfo() {
 					email: Yup.string()
 						.email("Invalid email address")
 						.required("This field is required"),
-					phoneNumber: Yup.string().matches(
-						phoneRegExp,
-						"Phone number is not valid"
-					),
+					phoneNumber: Yup.string()
+						.matches(phoneRegExp, "Phone number is not valid")
+						.required("This field is required"),
 				})}
 				onSubmit={(state) => {
 					dispatch(changeUser(state));
 					navigate("/selectPlan");
 				}}>
-				<Form className="info-form">
-					<label htmlFor="name">Name</label>
+				<Form className="page-content">
+					<div className="label-and-error">
+						<label htmlFor="name">Name</label>
+						<ErrorMessage
+							component={"p"}
+							className="error-message"
+							name="name"
+						/>
+					</div>
 					<Field name="name" type="text" />
-					<ErrorMessage name="name" />
 
-					<label htmlFor="email">Email</label>
+					<div className="label-and-error">
+						<label htmlFor="email">Email Address</label>
+						<ErrorMessage
+							component={"p"}
+							className="error-message"
+							name="email"
+						/>
+					</div>
 					<Field name="email" type="email" />
-					<ErrorMessage name="email" />
 
-					<label htmlFor="phoneNumber">Phone Number</label>
+					<div className="label-and-error">
+						<label htmlFor="phoneNumber">Phone Number</label>
+						<ErrorMessage
+							component={"p"}
+							className="error-message"
+							name="phoneNumber"
+						/>
+					</div>
 					<Field name="phoneNumber" type="text" />
-					<ErrorMessage name="phoneNumber" />
 				</Form>
 			</Formik>
-
-			<Button type="button" onClick={handleSubmit}>
-				Next Step
-			</Button>
+			<BottomButtons onClick={handleSubmit} />
 		</div>
 	);
 }

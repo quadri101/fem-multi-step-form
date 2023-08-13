@@ -1,10 +1,12 @@
-import { Stack } from "@mui/material";
 import React from "react";
 import AddOn from "./AddOn/AddOn";
 import BottomButtons from "../BottomButtons/BottomButtons";
+
+import "./AddOns.css";
+
 const addons = [
 	{
-		title: "Online Service",
+		title: "Online service",
 		description: "Access to multiplayer games",
 		price: 1,
 		id: 0,
@@ -25,13 +27,15 @@ const addons = [
 function AddOns() {
 	return (
 		<div className="MainContent">
-			<h1>Pick add-ons</h1>
-			<p>Add-ons help enhance your gaming experience</p>
-			<Stack>
+			<h1 className="page-header">Pick add-ons</h1>
+			<p className="page-description">
+				Add-ons help enhance your gaming experience.
+			</p>
+			<div className="page-content addons">
 				{addons.map((addon) => (
 					<AddOn key={addon.id} {...addon} />
 				))}
-			</Stack>
+			</div>
 
 			<BottomButtons canGoBack nextPage={"summary"}></BottomButtons>
 		</div>

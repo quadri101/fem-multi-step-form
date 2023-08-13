@@ -9,6 +9,7 @@ import YourInfo from "./components/MainContent/YourInfo/YourInfo.jsx";
 import SelectPlan from "./components/MainContent/SelectPlan/SelectPlan.jsx";
 import Addons from "./components/MainContent/AddOns/AddOns.jsx";
 import Summary from "./components/MainContent/Summary/Summary.jsx";
+import Completed from "./components/MainContent/Completed/Completed.jsx";
 
 const router = createMemoryRouter([
 	{
@@ -30,6 +31,10 @@ const router = createMemoryRouter([
 			{
 				path: "/summary",
 				element: <Summary />,
+			},
+			{
+				path: "/completed",
+				element: <Completed />,
 			},
 		],
 	},

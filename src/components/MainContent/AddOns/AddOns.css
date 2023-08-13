@@ -1,0 +1,5 @@
+.addons {
+	display: grid;
+	gap: 2rem;
+	align-self: baseline;
+}

@@ -1,11 +1,15 @@
-import { Checkbox, Grid, Stack } from "@mui/material";
 import { useSelector, useDispatch } from "react-redux";
 import { modifyAddons } from "../../../../../features/addons/addons";
 
+import "./AddOn.css";
 function AddOn(props) {
 	const dispatch = useDispatch();
-	const { title, description, price } = props;
+
+	let { title, description, price } = props;
+
 	const { includedAddons } = useSelector((state) => state.addOns);
+	const { recurrence } = useSelector((state) => state.plan);
+	console.log(recurrence);
 
 	function addOnIsIncluded(title, includedAddons) {
 		let newArray = includedAddons.filter((addon) => addon.title == title);
@@ -20,19 +24,32 @@ function AddOn(props) {
 		dispatch(modifyAddons(props));
 	}
 
+	if (recurrence !== "monthly") price *= 10;
+
 	return (
-		<Grid container className="AddOn" alignItems={"center"} onClick={setAddons}>
-			<Grid xs={2} item>
-				<Checkbox checked={isSelected} />
-			</Grid>
-			<Grid xs={8} item>
-				<Stack>
-					<p className="title">{title}</p>
-					<p className="description"> {description}</p>
-				</Stack>
-			</Grid>
-			<p>{price}</p>
-		</Grid>
+		<div
+			className={`addon ${isSelected ? "included" : ""}`}
+			onClick={setAddons}>
+			<div className={`checkbox${isSelected ? " checked" : ""}`}>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="12"
+					height="9"
+					viewBox="0 0 12 9">
+					<path
+						fill="none"
+						stroke="#FFF"
+						strokeWidth="2"
+						d="m1 4 3.433 3.433L10.866 1"
+					/>
+				</svg>
+			</div>
+			<p className="addon-title">{title}</p>
+			<p className="addon-description"> {description}</p>
+			<p className="addon-price">
+				+${price}/{recurrence === "monthly" ? "mo" : "yr"}
+			</p>
+		</div>
 	);
 }
 

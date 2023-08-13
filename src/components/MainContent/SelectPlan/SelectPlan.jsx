@@ -39,10 +39,12 @@ function SelectPlan() {
 
 	return (
 		<div className="MainContent">
-			<h1>Select your plan</h1>
-			<p>You have the option of monthly or yearly billing</p>
+			<h1 className="page-header">Select your plan</h1>
+			<p className="page-description">
+				You have the option of monthly or yearly billing
+			</p>
 
-			<div className="plans">
+			<div className="plans page-content">
 				<Plan
 					name={"arcade"}
 					price={
@@ -66,14 +68,11 @@ function SelectPlan() {
 					price={recurrence === "yearly" ? yearlyPrices.pro : monthlyPrices.pro}
 					image={"/images/icon-pro.svg"}
 				/>
-			</div>
-
-			<div
-				className=""
-				style={{ display: "flex", justifyContent: "center", gap: "1rem" }}>
-				<p>monthly</p>
-				<CustomizedSwitch checked={checked} onChange={handleSwitchChange} />
-				<p>yearly</p>
+				<div className="custom-switch">
+					<p className={!checked ? "selected" : ""}>monthly</p>
+					<CustomizedSwitch checked={checked} onChange={handleSwitchChange} />
+					<p className={checked ? "selected" : ""}>yearly</p>
+				</div>
 			</div>
 
 			<BottomButtons canGoBack nextPage={"addons"} />

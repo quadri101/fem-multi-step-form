@@ -2,18 +2,20 @@ import { Stack, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import React from "react";
 
-function BottomButtons({ nextPage, canGoBack }) {
+function BottomButtons({ nextPage, canGoBack, onClick }) {
 	const navigate = useNavigate();
+	const goToNextPage = () => navigate(`/${nextPage}`);
 	return (
-		<Stack margin={"2rem"} direction={"row"} justifyContent={"space-between"}>
-			{canGoBack ? <Button onClick={() => navigate(-1)}>Go back</Button> : null}
-			<Button
-				onClick={() => navigate(`/${nextPage}`)}
-				color="success"
-				variant="contained">
+		<div className="navigation-buttons">
+			{canGoBack ? (
+				<button className="back-button" onClick={() => navigate(-1)}>
+					Go back
+				</button>
+			) : null}
+			<button onClick={onClick || goToNextPage} className="navigation-button">
 				Next Page
-			</Button>
-		</Stack>
+			</button>
+		</div>
 	);
 }
 
