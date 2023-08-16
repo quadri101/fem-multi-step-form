@@ -2,7 +2,6 @@ import "./Step.css";
 
 function Step({ stepNumber, children, currentStep }) {
 	const isCurrentStep = currentStep === stepNumber;
-	console.log(isCurrentStep);
 	return (
 		<div className="Step">
 			<p className={`Stepnumber ${isCurrentStep && "current-step"}`}>

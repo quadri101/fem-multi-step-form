@@ -1,10 +1,11 @@
 import { useState } from "react";
 import Sidebar from "./components/Sidebar/Sidebar";
 import { Outlet } from "react-router-dom";
-import "./App.css";
 
+import "./App.css";
 function App() {
 	const [currentStep, setCurrentStep] = useState(1);
+
 	return (
 		<div className="App grid">
 			{/* my sidebar */}

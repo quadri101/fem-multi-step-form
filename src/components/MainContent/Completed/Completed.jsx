@@ -1,4 +1,5 @@
 import "./Completed.css";
+
 function Completed() {
 	return (
 		<div className="Completed grid ">

@@ -6,6 +6,7 @@ import CustomizedSwitch from "./CustomizedSwitch/CustomizedSwitch";
 import BottomButtons from "../BottomButtons/BottomButtons";
 import "./SelectPlan.css";
 import { useOutletContext } from "react-router-dom";
+
 const yearlyPrices = {
 	arcade: 90,
 	advanced: 120,

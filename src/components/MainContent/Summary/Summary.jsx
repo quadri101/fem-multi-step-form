@@ -1,10 +1,11 @@
+import { useEffect } from "react";
 import { Divider } from "@mui/material";
 import { useSelector } from "react-redux";
-import BottomButtons from "../BottomButtons/BottomButtons";
-import { Link } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
+
 import "./Summary.css";
-import { useOutletContext } from "react-router-dom";
-import { useEffect } from "react";
+
+import BottomButtons from "../BottomButtons/BottomButtons";
 function Summary() {
 	const [currentStep, setCurrentStep] = useOutletContext();
 

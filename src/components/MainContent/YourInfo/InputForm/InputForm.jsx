@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { changeUser } from "../../../../../features/info/userinfo";
 
 function InputForm({ formRef, userData }) {
-	const phoneRegExp = /\d/;
+	const phoneRegExp = /[+]\d/;
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 
@@ -36,7 +36,7 @@ function InputForm({ formRef, userData }) {
 						name="name"
 					/>
 				</div>
-				<Field name="name" type="text" />
+				<Field placeholder={"e.g Stephen King"} name="name" type="text" />
 
 				<div className="flex space-between">
 					<label htmlFor="email">Email Address</label>
@@ -46,7 +46,11 @@ function InputForm({ formRef, userData }) {
 						name="email"
 					/>
 				</div>
-				<Field name="email" type="email" />
+				<Field
+					placeholder={"e.g stephenking@lorem.com"}
+					name="email"
+					type="email"
+				/>
 
 				<div className="flex space-between">
 					<label htmlFor="phoneNumber">Phone Number</label>
@@ -56,7 +60,7 @@ function InputForm({ formRef, userData }) {
 						name="phoneNumber"
 					/>
 				</div>
-				<Field name="phoneNumber" type="text" />
+				<Field placeholder={"e.g +1234567890"} name="phoneNumber" type="text" />
 			</Form>
 		</Formik>
 	);

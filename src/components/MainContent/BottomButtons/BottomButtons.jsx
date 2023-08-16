@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import React from "react";
+
 import "./BottomButtons.css";
+
 function BottomButtons({ nextPage, canGoBack, onClick, confirm }) {
 	const navigate = useNavigate();
 	const goToNextPage = () => navigate(`/${nextPage}`);

@@ -3,6 +3,7 @@
 	background-image: url(./images/bg-sidebar-desktop.svg);
 	grid-area: sidebar;
 	background-repeat: no-repeat;
+	border-radius: 0.5rem;
 	background-size: cover;
 }
 

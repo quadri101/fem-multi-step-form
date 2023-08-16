@@ -29,6 +29,15 @@
 	box-sizing: border-box;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+	border: 1px solid var(--purplish-blue);
+	-webkit-text-fill-color: var(--dark-blue);
+	-webkit-box-shadow: 0 0 0px 1000px #fff inset;
+	transition: background-color 5000s ease-in-out 0s;
+}
+
 body {
 	font-family: "Ubuntu", sans-serif;
 	background-color: var(--magnolia);
