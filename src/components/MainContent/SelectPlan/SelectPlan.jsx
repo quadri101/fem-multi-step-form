@@ -1,27 +1,24 @@
 import React from "react";
-
 import { changeRecurrence, changePrice } from "../../../../features/plan/plan";
 import { useDispatch, useSelector } from "react-redux";
-
 import Plan from "./Plan/Plan";
-
-import "./SelectPlan.css";
 import CustomizedSwitch from "./CustomizedSwitch/CustomizedSwitch";
 import BottomButtons from "../BottomButtons/BottomButtons";
+import "./SelectPlan.css";
+import { useOutletContext } from "react-router-dom";
+const yearlyPrices = {
+	arcade: 90,
+	advanced: 120,
+	pro: 150,
+};
+
+const monthlyPrices = {
+	arcade: 9,
+	advanced: 12,
+	pro: 15,
+};
 
 function SelectPlan() {
-	const yearlyPrices = {
-		arcade: 90,
-		advanced: 120,
-		pro: 150,
-	};
-
-	const monthlyPrices = {
-		arcade: 9,
-		advanced: 12,
-		pro: 15,
-	};
-
 	const dispatch = useDispatch();
 	const { recurrence, plan } = useSelector((state) => state.plan);
 
@@ -44,7 +41,7 @@ function SelectPlan() {
 				You have the option of monthly or yearly billing
 			</p>
 
-			<div className="plans page-content">
+			<div className="plans page-content grid">
 				<Plan
 					name={"arcade"}
 					price={
@@ -68,10 +65,20 @@ function SelectPlan() {
 					price={recurrence === "yearly" ? yearlyPrices.pro : monthlyPrices.pro}
 					image={"/images/icon-pro.svg"}
 				/>
-				<div className="custom-switch">
-					<p className={!checked ? "selected" : ""}>monthly</p>
+				<div className="custom-switch flex bg-magnolia">
+					<p
+						className={`capitalize fw-500 ${
+							!checked ? "color-dark-blue" : "color-cool-gray"
+						}`}>
+						monthly
+					</p>
 					<CustomizedSwitch checked={checked} onChange={handleSwitchChange} />
-					<p className={checked ? "selected" : ""}>yearly</p>
+					<p
+						className={`capitalize fw-500 ${
+							checked ? "color-dark-blue" : "color-cool-gray"
+						}`}>
+						yearly
+					</p>
 				</div>
 			</div>
 

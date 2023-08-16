@@ -31,7 +31,7 @@ function AddOns() {
 			<p className="page-description">
 				Add-ons help enhance your gaming experience.
 			</p>
-			<div className="page-content addons">
+			<div className="page-content addons grid">
 				{addons.map((addon) => (
 					<AddOn key={addon.id} {...addon} />
 				))}

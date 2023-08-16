@@ -1,0 +1,29 @@
+.Completed {
+	--gap: 1rem;
+	grid-area: main-content;
+	place-self: center;
+	place-items: center;
+	max-width: 50ch;
+}
+
+.completed-description {
+	text-align: center;
+	line-height: 1.5;
+}
+
+.Completed img {
+	margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 40rem) {
+	.Completed {
+		background-color: var(--white);
+		border-radius: 1rem;
+		padding: 6rem 1rem;
+		margin-block-end: 8rem;
+		box-shadow: 1px 5px 70px -30px var(--cool-gray);
+		grid-row: overlap-area/ main-content-end;
+		grid-column: 1/-1;
+		width: calc(100vw - 2rem);
+	}
+}

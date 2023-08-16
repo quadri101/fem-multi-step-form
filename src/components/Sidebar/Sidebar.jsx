@@ -1,14 +1,20 @@
-import React from "react";
 import Step from "./Step/Step";
-
 import "./Sidebar.css";
-function Sidebar() {
+function Sidebar({ currentStep }) {
 	return (
-		<div className="Sidebar">
-			<Step stepNumber={1} stepText={"your info"} isCurrentStep={true} />
-			<Step stepNumber={2} stepText={"select plan"} isCurrentStep={false} />
-			<Step stepNumber={3} stepText={"add-ons"} isCurrentStep={false} />
-			<Step stepNumber={4} stepText={"summary"} isCurrentStep={false} />
+		<div className="Sidebar flex">
+			<Step currentStep={currentStep} stepNumber={1}>
+				your info
+			</Step>
+			<Step currentStep={currentStep} stepNumber={2}>
+				select plan
+			</Step>
+			<Step currentStep={currentStep} stepNumber={3}>
+				add-ons
+			</Step>
+			<Step currentStep={currentStep} stepNumber={4}>
+				summary
+			</Step>
 		</div>
 	);
 }

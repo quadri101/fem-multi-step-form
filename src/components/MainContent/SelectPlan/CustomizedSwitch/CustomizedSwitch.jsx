@@ -1,4 +1,3 @@
-import * as React from "react";
 import { styled } from "@mui/material/styles";
 import Switch from "@mui/material/Switch";
 
@@ -18,12 +17,11 @@ const CustomizedSwitch = styled(Switch)(({ theme }) => ({
 	"& .MuiSwitch-switchBase": {
 		padding: 4.5,
 		"&.Mui-checked": {
-			transform: "translateX(18px)",
+			transform: "translateX(19px)",
 			color: "#fff",
 			"& + .MuiSwitch-track": {
 				opacity: 1,
-				backgroundColor:
-					theme.palette.mode === "dark" ? "rgba(2,41,90,1)" : "rgba(2,41,90,1)",
+				backgroundColor: "rgba(2,41,90,1)",
 			},
 		},
 	},
@@ -39,8 +37,7 @@ const CustomizedSwitch = styled(Switch)(({ theme }) => ({
 	"& .MuiSwitch-track": {
 		borderRadius: 200 / 2,
 		opacity: 1,
-		backgroundColor:
-			theme.palette.mode === "dark" ? "rgba(2,41,90,1)" : "rgba(2,41,90,1)",
+		backgroundColor: "rgba(2,41,90,1)",
 		boxSizing: "border-box",
 	},
 }));

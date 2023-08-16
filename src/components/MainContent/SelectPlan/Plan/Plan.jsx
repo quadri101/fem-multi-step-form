@@ -19,11 +19,15 @@ function Plan({ name, price, image }) {
 			className={`plan ${isSelectedPlan ? "SelectedPlan" : ""}`}
 			onClick={changePlanType}>
 			<img src={image} alt={name} />
-			<p className="name">{name}</p>
-			<p className="price">
+			<p className="name capitalize color-dark-blue fw-500">{name}</p>
+			<p className="color-cool-gray">
 				${price}/{recurrence === "monthly" ? "mo" : "yr"}
 			</p>
-			{recurrence === "yearly" && <p className="free-offer">2 months free</p>}
+			{recurrence === "yearly" && (
+				<p className="fw-500 fs-small color-dark-blue free-offer">
+					2 months free
+				</p>
+			)}
 		</div>
 	);
 }

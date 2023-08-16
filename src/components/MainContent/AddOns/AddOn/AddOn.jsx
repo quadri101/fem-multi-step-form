@@ -9,7 +9,6 @@ function AddOn(props) {
 
 	const { includedAddons } = useSelector((state) => state.addOns);
 	const { recurrence } = useSelector((state) => state.plan);
-	console.log(recurrence);
 
 	function addOnIsIncluded(title, includedAddons) {
 		let newArray = includedAddons.filter((addon) => addon.title == title);
@@ -28,9 +27,9 @@ function AddOn(props) {
 
 	return (
 		<div
-			className={`addon ${isSelected ? "included" : ""}`}
+			className={`addon grid ${isSelected ? "included" : ""}`}
 			onClick={setAddons}>
-			<div className={`checkbox${isSelected ? " checked" : ""}`}>
+			<div className={`checkbox grid ${isSelected ? "checked" : ""}`}>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="12"
@@ -44,9 +43,9 @@ function AddOn(props) {
 					/>
 				</svg>
 			</div>
-			<p className="addon-title">{title}</p>
+			<p className="addon-title fw-500 color-dark-blue fs-large">{title}</p>
 			<p className="addon-description"> {description}</p>
-			<p className="addon-price">
+			<p className="addon-price fw-500 color-purplish-blue">
 				+${price}/{recurrence === "monthly" ? "mo" : "yr"}
 			</p>
 		</div>

@@ -1,0 +1,36 @@
+.navigation-buttons {
+	grid-area: buttons;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.navigation-button {
+	padding: 0.8rem 1.5rem;
+	border-radius: 0.5rem;
+	grid-column-end: -1;
+	justify-self: end;
+}
+
+.navigation-button:hover {
+	background-color: hsl(243, 100%, 62%);
+}
+
+.back-button {
+	background-color: transparent;
+	justify-self: start;
+	grid-column-start: 1;
+}
+
+.back-button:hover {
+	color: hsl(213, 96%, 18%);
+}
+
+@media screen and (max-width: 40rem) {
+	.navigation-buttons {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		padding: 1rem 1rem;
+		background-color: hsl(0, 0%, 100%);
+		width: 100%;
+	}
+}

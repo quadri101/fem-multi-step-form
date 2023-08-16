@@ -4,16 +4,13 @@ import "./App.css";
 
 function App() {
 	return (
-		<>
-			<div className="App">
-				{/* my sidebar */}
+		<div className="App grid">
+			{/* my sidebar */}
+			<Sidebar />
 
-				<Sidebar />
-				{/* Outlet Component for children of the App i.e. the steps */}
-
-				<Outlet />
-			</div>
-		</>
+			{/* Outlet Component for children of the App i.e. the steps */}
+			<Outlet />
+		</div>
 	);
 }
 

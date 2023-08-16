@@ -1,27 +1,26 @@
 .plans {
-	display: grid;
-	grid-auto-flow: row;
-	grid-template-columns: repeat(3, minmax(7rem, 10vw));
-	gap: 3.5rem 0.5rem;
-	justify-content: center;
+	grid-template-columns: 1fr;
+	gap: 1.2rem;
 }
 
 .custom-switch {
+	--gap: 1rem;
 	grid-column: 1 / -1;
-	display: flex;
 	justify-content: center;
 	align-items: center;
-	gap: 1rem;
-	background-color: hsl(217, 100%, 97%);
 	border-radius: 0.5rem;
 	padding: 1rem;
-}
-.custom-switch p {
-	text-transform: capitalize;
-	font-weight: 500;
-	color: hsl(231, 11%, 63%);
 }
 
 .custom-switch p.selected {
 	color: hsl(213, 96%, 18%);
+}
+
+@media screen and (min-width: 40rem) {
+	.plans {
+		--gap: 3.5rem 0.5rem;
+		grid-auto-flow: row;
+		grid-template-columns: repeat(3, minmax(8rem, 50%));
+		justify-content: center;
+	}
 }

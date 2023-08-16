@@ -19,7 +19,8 @@
 	font-size: 1rem;
 	font-weight: 500;
 }
-.Stepnumber.Selected {
+
+.current-step {
 	color: hsl(213, 96%, 18%);
 	background-color: hsl(229, 24%, 87%);
 }
@@ -33,4 +34,13 @@
 	text-transform: uppercase;
 	color: hsl(0, 0%, 100%);
 	font-weight: 500;
+}
+
+@media screen and (max-width: 40rem) {
+	.Stepcontent {
+		display: none;
+	}
+	.Step {
+		padding: 0;
+	}
 }

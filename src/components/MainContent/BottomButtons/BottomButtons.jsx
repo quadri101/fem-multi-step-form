@@ -1,19 +1,26 @@
-import { Stack, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import React from "react";
-
-function BottomButtons({ nextPage, canGoBack, onClick }) {
+import "./BottomButtons.css";
+function BottomButtons({ nextPage, canGoBack, onClick, confirm }) {
 	const navigate = useNavigate();
 	const goToNextPage = () => navigate(`/${nextPage}`);
 	return (
-		<div className="navigation-buttons">
+		<div className="navigation-buttons grid space-between">
 			{canGoBack ? (
-				<button className="back-button" onClick={() => navigate(-1)}>
+				<button
+					type="button"
+					className="back-button color-cool-gray"
+					onClick={() => navigate(-1)}>
 					Go back
 				</button>
 			) : null}
-			<button onClick={onClick || goToNextPage} className="navigation-button">
-				Next Page
+			<button
+				type="button"
+				onClick={onClick || goToNextPage}
+				className={`navigation-button color-alabaster ${
+					confirm ? "bg-purplish-blue" : " bg-dark-blue"
+				}`}>
+				{confirm ? "Confirm" : "Next Page"}
 			</button>
 		</div>
 	);

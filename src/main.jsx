@@ -1,47 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-import { RouterProvider, createMemoryRouter } from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
 import { Provider } from "react-redux";
-import store from "../app/store.js";
-import App from "./App.jsx";
-import YourInfo from "./components/MainContent/YourInfo/YourInfo.jsx";
-import SelectPlan from "./components/MainContent/SelectPlan/SelectPlan.jsx";
-import Addons from "./components/MainContent/AddOns/AddOns.jsx";
-import Summary from "./components/MainContent/Summary/Summary.jsx";
-import Completed from "./components/MainContent/Completed/Completed.jsx";
 
-const router = createMemoryRouter([
-	{
-		path: "/",
-		element: <App />,
-		children: [
-			{
-				index: true,
-				element: <YourInfo />,
-			},
-			{
-				path: "selectplan",
-				element: <SelectPlan />,
-			},
-			{
-				path: "addons",
-				element: <Addons />,
-			},
-			{
-				path: "/summary",
-				element: <Summary />,
-			},
-			{
-				path: "/completed",
-				element: <Completed />,
-			},
-		],
-	},
-]);
+import router from "./routes/routes.jsx";
+import store from "../app/store.js";
+
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<React.StrictMode>
+		{/* State Provider */}
 		<Provider store={store}>
+			{/* Router Provider */}
 			<RouterProvider router={router} />
 		</Provider>
 	</React.StrictMode>

@@ -1,14 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-	currentPage: "yourinfo",
+	currentStep: 1,
 };
 
 const sidebarSlice = createSlice({
-	name: sidebar,
+	name: "step",
 	initialState,
 	reducers: {
-		changeCurrentPage: (state, action) => {
+		changeCurrentStep: (state, action) => {
 			state.currentPage = action.payload;
 		},
 	},
@@ -16,4 +16,4 @@ const sidebarSlice = createSlice({
 
 export default sidebarSlice.reducer;
 
-export const { changeCurrentPage } = sidebarSlice.actions;
+export const { changeCurrentStep } = sidebarSlice.actions;

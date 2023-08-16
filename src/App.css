@@ -1,57 +1,86 @@
+:root {
+	/* Main Colors */
+	--dark-blue: hsl(213, 96%, 18%);
+	--purplish-blue: hsl(243, 100%, 62%);
+	--pastel-blue: hsl(228, 100%, 84%);
+	--very-light-blue: hsl(206, 94%, 87%);
+	--very-light-blue-bg: hsla(206, 94%, 87%, 0.2);
+	--red: hsl(354, 84%, 57%);
+
+	/* Neutral Colors */
+	--cool-gray: hsl(231, 11%, 63%);
+	--light-gray: hsl(229, 24%, 87%);
+	--magnolia: hsl(217, 100%, 97%);
+	--alabaster: hsl(231, 100%, 99%);
+	--white: hsl(0, 0%, 100%);
+
+	/* font sizes */
+	--fs-800: 2rem;
+	--fs-700: 1.5rem;
+	--fs-600: 1rem;
+	--fs-500: 0.9rem;
+	--fs-400: 0.8rem;
+	--fs-300: 0.75rem;
+}
+
 * {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
 }
 
+body {
+	font-family: "Ubuntu", sans-serif;
+	background-color: var(--magnolia);
+	display: grid;
+	place-content: center;
+	height: 100vh;
+	padding: 1rem;
+}
+
 input {
 	font-family: inherit;
 	font-weight: 500;
-	color: hsl(213, 96%, 18%);
+	color: var(--dark-blue);
 	font-size: 1rem;
 	padding: 0.75rem;
 	border-radius: 0.5rem;
-	border: 1px hsl(231, 11%, 63%) solid;
+	border: 1px var(--cool-gray) solid;
 	outline: none;
 	margin-bottom: 1rem;
 	width: 100%;
 }
 
 input:focus {
-	border: 1px hsl(243, 100%, 62%) solid;
+	border: 1px var(--purplish-blue) solid;
 }
 
 label {
 	color: hsl(213, 96%, 18%);
-	font-size: 0.9rem;
+	font-size: var(--fs-500);
 	font-weight: 500;
 	margin-bottom: 0.3rem;
 }
 
 button {
 	font-weight: 500;
-}
-body {
-	font-family: "Ubuntu", sans-serif;
-}
-
-input[type="checkbox"] {
-	margin-bottom: 0px;
-	aspect-ratio: 1/1;
-	width: 1.3rem;
-	background: black;
+	cursor: pointer;
+	font-family: inherit;
+	border: none;
 }
 
 .App {
+	--gap: 0 1rem;
 	padding: 1rem;
-	min-height: 100vh;
-	gap: 0 1rem;
-	display: grid;
 	grid-template:
 		"sidebar  ." 1rem
 		"sidebar  main-content" auto
 		"sidebar  . " 1rem
-		/ minmax(15rem, 20vw) minmax(20rem, auto);
+		/ minmax(15rem, 17rem) minmax(20rem, auto);
+	height: min(100vh, 33rem);
+	border-radius: 1rem;
+	width: min(60rem, 100vw);
+	background-color: var(--white);
 }
 
 .MainContent {
@@ -65,13 +94,6 @@ input[type="checkbox"] {
 		"buttons" max-content / 1fr;
 }
 
-.Sidebar {
-	grid-area: sidebar;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-/* General Styles */
 .page-header {
 	color: hsl(213, 96%, 18%);
 	margin-bottom: 0.5rem;
@@ -89,43 +111,136 @@ input[type="checkbox"] {
 	margin-bottom: 2.5rem;
 	grid-area: description;
 }
-.navigation-buttons {
-	grid-area: buttons;
+
+/* Color */
+.color-dark-blue {
+	color: var(--dark-blue);
+}
+
+.color-cool-gray {
+	color: var(--cool-gray);
+}
+
+.color-purplish-blue {
+	color: var(--purplish-blue);
+}
+
+.color-white {
+	color: var(--white);
+}
+
+.color-alabaster {
+	color: var(--alabaster);
+}
+
+.color-red {
+	color: var(--red);
+}
+
+/* Font Sizes */
+.fs-larger {
+	font-size: 2rem;
+	font-weight: 700;
+}
+
+.fs-large {
+	font-size: 1.2rem;
+	font-weight: 500;
+}
+
+.fs-medium {
+	font-size: 1rem;
+}
+
+.fs-small {
+	font-size: 0.9rem;
+}
+
+.fs-smallest {
+	font-size: 0.8rem;
+}
+
+.fw-500 {
+	font-weight: 500;
+}
+
+.fw-700 {
+	font-weight: 700;
+}
+
+/* Background Colors */
+.bg-dark-blue {
+	background-color: var(--dark-blue);
+}
+
+.bg-magnolia {
+	background-color: var(--magnolia);
+}
+.bg-purplish-blue {
+	background-color: var(--purplish-blue);
+}
+
+.bg-light-blue {
+	background-color: var(--very-light-blue-bg);
+}
+
+.bg-white {
+	background-color: var(--white);
+}
+
+.bg-cool-gray {
+	background-color: var(--cool-gray);
+}
+
+/* layout */
+.grid {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	gap: var(--gap, 1rem);
+}
+
+.flex {
+	display: flex;
+	gap: var(--gap, 1rem);
+}
+
+.space-between {
 	justify-content: space-between;
 }
 
-.navigation-button:hover {
-	background-color: hsl(243, 100%, 62%);
+.capitalize {
+	text-transform: capitalize;
 }
 
-.navigation-button {
-	cursor: pointer;
-	font-family: inherit;
-	margin-top: 4rem;
-	padding: 0.8rem 1.5rem;
-	font-size: 1rem;
-	border-radius: 0.5rem;
-	border: none;
-	background-color: hsl(213, 96%, 18%);
-	color: hsl(231, 100%, 99%);
-	grid-column-end: -1;
-	justify-self: end;
-}
-.back-button {
-	cursor: pointer;
-	font-family: inherit;
-	margin-top: 4rem;
-	/* padding: 0.8rem 1.5rem; */
-	font-size: 1rem;
-	border: none;
-	background-color: transparent;
-	color: hsl(231, 11%, 63%);
-	justify-self: start;
-}
-.back-button:hover {
-	color: hsl(213, 96%, 18%);
-}
-@media screen and (min-width: 40rem) {
+/* Small Screens */
+@media screen and (max-width: 40rem) {
+	body {
+		padding: 0;
+		align-content: baseline;
+	}
+	.App {
+		padding: 0 1rem;
+		grid-template:
+			"sidebar" auto
+			"overlap-area" 5rem
+			"main-content" max-content/ 1fr;
+		padding: 0;
+		background-color: transparent;
+	}
+	.MainContent {
+		width: calc(100vw - 2rem);
+		grid-row: overlap-area/ main-content-end;
+		grid-column: 1/-1;
+		align-self: end;
+		background-color: var(--white);
+		border-radius: 1rem;
+		padding: 2rem 1rem;
+		margin-block-end: 8rem;
+		box-shadow: 1px 5px 70px -30px var(--cool-gray);
+	}
+	.page-description {
+		margin-bottom: 1.2rem;
+	}
+	.page-header {
+		font-size: 1.75rem;
+	}
 }

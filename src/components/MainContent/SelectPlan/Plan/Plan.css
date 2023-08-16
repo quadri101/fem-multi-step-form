@@ -2,33 +2,51 @@
 	cursor: pointer;
 	border-radius: 0.5rem;
 	padding: 1rem;
-	border: 1px transparent solid;
+	border: 1px hsl(231, 11%, 63%) solid;
 }
 
 .plan:hover {
 	border: 1px hsl(243, 100%, 62%) solid;
 }
+
 .plan img {
 	margin-block-end: 2rem;
 }
 
 .plan .name {
-	text-transform: capitalize;
-	color: hsl(213, 96%, 18%);
-	font-weight: 500;
 	margin-bottom: 0.2rem;
 }
-.plan .price {
-	color: hsl(231, 11%, 63%);
-}
+
 .plan .free-offer {
 	margin-top: 0.5rem;
-	font-size: 0.9rem;
-	color: hsl(213, 96%, 18%);
-	font-weight: 500;
-	word-spacing: 0;
 }
+
 .SelectedPlan {
 	background-color: hsla(206, 94%, 87%, 0.3);
 	border: 1px hsl(243, 100%, 62%) solid;
+}
+
+@media screen and (max-width: 40rem) {
+	.plan {
+		display: grid;
+		grid-template:
+			"image plan-name" max-content
+			"image price" max-content
+			"image free-offer" max-content / max-content max-content;
+		gap: 0rem 1rem;
+		padding: 1rem;
+	}
+
+	.plan img {
+		grid-area: image;
+		margin: 0;
+	}
+
+	.plan .name {
+		grid-area: plan-name;
+	}
+
+	.free-offer {
+		grid-area: free-offer;
+	}
 }

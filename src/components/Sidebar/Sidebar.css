@@ -1,7 +1,21 @@
 .Sidebar {
-	display: flex;
 	flex-direction: column;
 	background-image: url(./images/bg-sidebar-desktop.svg);
+	grid-area: sidebar;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
 
-	border-radius: 0.5rem;
+@media screen and (max-width: 40rem) {
+	.Sidebar {
+		border-radius: 0;
+		flex-direction: row;
+		background-image: url(./images/bg-sidebar-mobile.svg);
+		justify-content: center;
+		align-items: start;
+		padding: 2rem 0;
+		height: 11rem;
+		grid-row: sidebar/overlap-area-end;
+		grid-column: 1/-1;
+	}
 }

@@ -1,10 +1,9 @@
 .addon {
-	display: grid;
+	--gap: 0rem 2rem;
 	grid-template:
 		"checkbox title price" auto
 		"checkbox description price" auto / max-content minmax(10vw, 17.5rem)
 		max-content;
-	gap: 0rem 2rem;
 	align-items: center;
 	border: 1px solid hsl(231, 11%, 63%);
 	padding: 1rem;
@@ -18,18 +17,13 @@
 }
 
 .addon-title {
-	font-weight: 500;
-	color: hsl(213, 96%, 18%);
 	grid-area: title;
-	font-size: 1.1rem;
 	margin-bottom: 0.3rem;
 }
 
 .addon-price {
-	font-weight: 500;
 	grid-area: price;
 	justify-self: right;
-	color: hsl(243, 100%, 62%);
 }
 
 .addon-description {
@@ -43,7 +37,6 @@
 	aspect-ratio: 1;
 	border: 1px solid hsl(231, 11%, 63%);
 	border-radius: 0.3rem;
-	display: grid;
 	place-items: center;
 	grid-area: checkbox;
 }
@@ -59,4 +52,19 @@
 
 .checkbox.checked svg {
 	display: block;
+}
+
+@media screen and (max-width: 40rem) {
+	.addon {
+		gap: 0 0.75rem;
+		padding: 0.75rem;
+	}
+	.addon-title {
+		font-size: 1rem;
+		font-weight: 700;
+	}
+
+	.addon-description {
+		font-size: 0.8rem;
+	}
 }
