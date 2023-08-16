@@ -25,6 +25,7 @@
 
 .summary-price {
 	grid-area: summary-price;
+	justify-self: end;
 }
 
 .summary-addon-price {

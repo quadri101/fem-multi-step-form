@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import AddOn from "./AddOn/AddOn";
 import BottomButtons from "../BottomButtons/BottomButtons";
-
+import { useOutletContext } from "react-router-dom";
 import "./AddOns.css";
 
 const addons = [
@@ -25,6 +25,12 @@ const addons = [
 	},
 ];
 function AddOns() {
+	const [currentStep, setCurrentStep] = useOutletContext();
+
+	useEffect(() => {
+		setCurrentStep(3);
+	}, [currentStep]);
+
 	return (
 		<div className="MainContent">
 			<h1 className="page-header">Pick add-ons</h1>

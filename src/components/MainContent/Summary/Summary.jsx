@@ -3,7 +3,15 @@ import { useSelector } from "react-redux";
 import BottomButtons from "../BottomButtons/BottomButtons";
 import { Link } from "react-router-dom";
 import "./Summary.css";
+import { useOutletContext } from "react-router-dom";
+import { useEffect } from "react";
 function Summary() {
+	const [currentStep, setCurrentStep] = useOutletContext();
+
+	useEffect(() => {
+		setCurrentStep(4);
+	}, [currentStep]);
+
 	const { recurrence, plan, price } = useSelector((state) => state.plan);
 	const { includedAddons } = useSelector((state) => state.addOns);
 

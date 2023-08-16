@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { modifyAddons } from "../../../../../features/addons/addons";
+import { useEffect } from "react";
 
 import "./AddOn.css";
 function AddOn(props) {

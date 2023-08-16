@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { changeRecurrence, changePrice } from "../../../../features/plan/plan";
 import { useDispatch, useSelector } from "react-redux";
 import Plan from "./Plan/Plan";
@@ -19,6 +19,12 @@ const monthlyPrices = {
 };
 
 function SelectPlan() {
+	const [currentStep, setCurrentStep] = useOutletContext();
+
+	useEffect(() => {
+		setCurrentStep(2);
+	}, [currentStep]);
+
 	const dispatch = useDispatch();
 	const { recurrence, plan } = useSelector((state) => state.plan);
 
