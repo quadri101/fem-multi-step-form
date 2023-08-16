@@ -1,6 +1,6 @@
 .Sidebar {
 	flex-direction: column;
-	background-image: url(./images/bg-sidebar-desktop.svg);
+	background-image: url(/images/bg-sidebar-desktop.svg);
 	grid-area: sidebar;
 	background-repeat: no-repeat;
 	border-radius: 0.5rem;
@@ -11,7 +11,7 @@
 	.Sidebar {
 		border-radius: 0;
 		flex-direction: row;
-		background-image: url(./images/bg-sidebar-mobile.svg);
+		background-image: url(/images/bg-sidebar-mobile.svg);
 		justify-content: center;
 		align-items: start;
 		padding: 2rem 0;
